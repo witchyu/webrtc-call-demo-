@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebRTC Call with PeerJS</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; background: #f0f2f5; padding: 20px; }
+        .container { max-width: 600px; margin: auto; background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        video { width: 45%; background: black; border-radius: 8px; margin: 5px; }
+        input, button { padding: 10px; font-size: 16px; margin: 5px; border-radius: 6px; border: 1px solid #ccc; }
+        button { background: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        #my-id { font-weight: bold; color: #28a745; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>ระบบโทรคุยผ่านเว็บ (PeerJS)</h2>
+        <p>ID ของคุณคือ: <span id="my-id">กำลังเชื่อมต่อ...</span></p>
+
+        <div>
+            <input type="text" id="call-id" placeholder="กรอก ID ของเพื่อนที่จะโทรหา">
+            <button id="call-btn">โทรออก</button>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <video id="local-video" autoplay muted playsinline></video>
+            <video id="remote-video" autoplay playsinline></video>
+        </div>
+    </div>
+
+    <!-- โหลดไลบรารี PeerJS จาก CDN -->
+    <script src="https://unpkg.com/peerjs@1.5.4/dist/peerjs.min.js"></script>
+    <script src="script.dp.js"></script>
+</body>
+</html>
